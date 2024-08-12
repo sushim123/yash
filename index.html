@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Landing Page | MJSTK</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- ===============NAVBAR=============== -->
+    <nav class="navbar">
+        <div class="menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="logo">
+            <i class="fas fa-crown"></i>
+            <span class="logo-text">mjstk</span>
+        </div>
+
+        <div class="search">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div class="cart">
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+
+        <div class="profile-pic">
+            <img src="assets/photo-1628563694622-5a76957fd09c.jpeg" alt="Photo by Axel Eres on Unsplash">
+        </div>
+    </nav>
+
+
+    <!-- ===============MAIN SECTION=============== -->
+
+    <div class="main">
+        <div class="split left">
+            <i class="fas fa-chevron-left"></i>
+            <img src="assets/penny-skateboard.png" class="skateboard" alt="penny 36 inch longboard in blue">
+            <div class="text">
+
+                <h1 class="title">cruiser skateboard</h1>
+                <p class="subtitle"><em>mmm ahhh <br> ..push it!</em></p>
+                <p class="desc">Interdum et malesuada fames ac ante ipsum primis faucibus. Integer id nisi nec nulla luctus lacinia non en turpis.</p>
+                <button class="button discover-btn">
+                    Discover More 
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="split right">
+            <i class="fas fa-chevron-right"></i>
+            <img src="assets/adidas-shoes.png" class="shoes" alt=" adidas pharrell williams tennis hu shoe in tangerine/gold">
+            <div class="text">
+
+                <h1 class="title">adidas pharrell williams tennis hu</h1>
+                <p class="subtitle"><em>because <br> i'm happy <br> again</em></p>
+                <p class="desc">Vestibulum aliquaam hendrerit molesite. Mauris malesuada nisi sit amet augue accumasan tincidunt.</p>
+                <button class="button discover-btn">
+                    Discover More 
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== Ticket Booking ui ======= -->
+    <div id="ticket-booking">
+        <h2>Book Your Tickets</h2>
+        <label for="guestCount">Number of Guests:</label>
+        <input type="number" id="guestCount" min="1">
+        <button id="addGuestFields">Next</button>
+
+        <form id="guestForm" style="display:none;">
+            <div id="guestFields"></div>
+            <button type="button" id="addGuestsBtn" disabled>Add Guests</button>
+        </form>
+    </div>
+    
+
+    <!-- SCRIPT CDNs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+    <!-- ===============PAGE-NAVIGATION SELECTOR=============== -->
+    <div class="page-chevron">
+        <div class="page-indicator">
+            <span>01</span>06
+        </div>
+        <div class="chevronLR">
+            <i class="fas fa-chevron-left"></i>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+
+
+    <!-- SCRIPT CDNs -->
+    <!-- FONTAWESOME -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+<style>
+    /*================FONTS================*/
+
+@font-face {
+    font-family: 'Exb FLF';
+    src: url('/font/SansSerifExbFLF.ttf');
+}
+
+/*================DEFAULTS================*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px !important;
+    color: #fff !important;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/*================NAVBAR================*/
+
+.navbar {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    padding: 0 30px;
+    font-size: 20px;
+    z-index: 1;
+    align-items: center;
+}
+
+.navbar>div {
+    padding: 0 30px;
+}
+
+.menu,
+.logo,
+.search,
+.cart {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.fa-bars {
+    transform: scale(1.6, 1);
+}
+
+.cart::after {
+    content: "";
+    font-size: .6rem;
+    text-align: center;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #0087CC;
+    margin-left: -2px !important;
+    padding: 0;
+    border-radius: 50%;
+    transform: translateY(-5px);
+}
+
+.logo {
+    display: flex;
+    margin: 0 auto 0 36%;
+}
+
+.logo .logo-text {
+    font-family: 'Exb FLF', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 20px 0 auto 10px;
+}
+
+.profile-pic img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/*================MAIN SECTION================*/
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transition: .8s all cubic-bezier(.87, .76, .33, .98);
+    overflow: hidden;
+}
+
+.split.left {
+    left: 0;
+    background: rgb(0, 135, 204);
+    background: linear-gradient(90deg, rgba(0, 135, 204, 1) 0%, rgb(20, 148, 212) 100%);
+}
+
+.split.right {
+    right: 0;
+    background: rgb(255, 161, 9);
+    background: linear-gradient(90deg, rgba(255, 161, 9, 1) 0%, rgba(203, 129, 10, 1) 100%);
+}
+
+.hoverLeft .split.left,
+.hoverRight .split.right {
+    width: 65%;
+}
+
+.hoverLeft .split.right,
+.hoverRight .split.left {
+    width: 35%;
+}
+
+.split.left .fa-chevron-left,
+.split.right .fa-chevron-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    margin: 0 1rem;
+}
+
+.split.left .fa-chevron-left {
+    right: 0;
+}
+
+.skateboard {
+    position: absolute;
+    width: 85%;
+    max-height: 95vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.shoes {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text {
+    position: absolute;
+    width: 80vh;
+    max-width: 600px;
+    margin-left: 2rem;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s cubic-bezier(.87, .76, .33, .98);
+}
+
+.hoverLeft .split.right .text {
+    margin-left: 3rem;
+}
+
+.text .title {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 200;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.text .subtitle {
+    font-family: 'Exb FLF', sans-serif;
+    color: #fff;
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 1;
+    margin-top: 1.75rem;
+    margin-bottom: -30px !important;
+}
+
+.text .desc {
+    font-size: .8rem;
+    color: #fff;
+    font-weight: 300;
+    line-height: 2;
+    margin: 10px 0 30px 0;
+    width: 400px;
+}
+
+.text .button {
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    border: 2px solid #fff;
+    background: transparent;
+    padding: 13px 30px 15px 30px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 100px;
+}
+
+.text .button .fa-long-arrow-alt-right {
+    margin-left: 25px;
+    transform: scale(2.5, 1);
+}
+
+.hoverLeft .split.left .text {
+    transform: translate(-40%, -50%);
+}
+
+.hoverLeft .split.right .text {
+    transform: translate(-40%, -50%);
+}
+
+.hoverRight .split.right .text {
+    transform: translate(-60%, -50%);
+}
+
+.hoverRight .split.left .text {
+    transform: translate(-45%, -50%);
+}
+
+/* =========Ticket Booking Ui==========*/
+#ticket-booking {
+        display: none;
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #e44a4a9c;
+        color: #333;
+        border-radius: 10px;
+        width: 80%;
+        margin: 50px auto;
+    
+    
+}
+
+#guestFields {
+    margin-top: 10px;
+}
+
+.guest-input {
+    margin-bottom: 10px;
+}
+
+#addGuestsBtn {
+    background-color: #0087CC;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addGuestsBtn:disabled {
+    background-color: #1b4875;
+    cursor: not-allowed;
+}
+
+/*================PAGE-NAVIGATION SELECTOR================*/
+
+.page-chevron {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    right: 0;
+    height: 80px;
+    align-items: center;
+}
+
+.page-indicator {
+    font-weight: 400;
+    padding: 0 20px;
+}
+
+.page-indicator span::after {
+    content: "";
+    display: inline-block;
+    width: 100px;
+    margin: 0 10px;
+    border: .2px solid #9e6767;
+    transform: translateY(-5px);
+}
+
+.chevronLR {
+    padding: 0 2.5rem;
+}
+
+.chevronLR .fa-chevron-left,
+.chevronLR .fa-chevron-right {
+    font-size: 1.4rem;
+}
+
+.chevronLR .fa-chevron-left {
+    margin-right: 1.3rem;
+}
+
+.chevronLR .fa-chevron-right {
+    margin-right: 2rem;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #74b918;
+}
+
+.ticket-card {
+    background-color: rgb(21, 120, 37);
+    border: 1px solid #e8e884;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+details summary {
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+</style>
+<script>
+ var content = document.querySelector(".main");
+ var left = document.querySelector(".left");
+ var right = document.querySelector(".right");
+    
+
+left.addEventListener('mouseenter', () => {
+    content.classList.add('hoverLeft');
+})
+
+left.addEventListener('mouseleave', () => {
+    content.classList.remove('hoverLeft');
+})
+
+right.addEventListener('mouseenter', () => {
+    content.classList.add('hoverRight');
+})
+
+right.addEventListener('mouseleave', () => {
+    content.classList.remove('hoverRight');
+})
+// Smooth scroll to ticket booking section
+document.querySelectorAll('.discover-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        document.getElementById('ticket-booking').style.display = 'block'; // Show the ticket booking UI
+        document.getElementById('ticket-booking').scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Function to calculate price based on age
+function calculatePrice(age) {
+    if (age <= 2) {
+        return 0;
+    } else if (age > 2 && age < 18) {
+        return 100;
+    } else if (age >= 18 && age < 60) {
+        return 500;
+    } else if (age >= 60) {
+        return 300;
+    }
+}
+
+// Function to save guest data and calculate total price
+function saveGuestData() {
+    const guestCount = document.getElementById('guestCount').value;
+    let guests = [];
+    let totalPrice = 0;
+
+    for (let i = 1; i <= guestCount; i++) {
+        const guestName = document.getElementById(`guestName${i}`).value;
+        const guestAge = parseInt(document.getElementById(`guestAge${i}`).value);
+
+        const guest = {
+            name: guestName,
+            age: guestAge,
+            price: calculatePrice(guestAge)
+        };
+
+        guests.push(guest);
+        totalPrice += guest.price;
+    }
+
+    // Save guests data to local storage
+    localStorage.setItem('guests', JSON.stringify(guests));
+    localStorage.setItem('totalPrice', totalPrice);
+
+    alert(`Guests added successfully! Total entrance price: INR ${totalPrice}`);
+}
+
+// Event listeners
+document.getElementById('addGuestsBtn').addEventListener('click', saveGuestData);
+
+document.getElementById('addGuestFields').addEventListener('click', function () {
+    const guestCount = document.getElementById('guestCount').value;
+    const guestFields = document.getElementById('guestFields');
+
+    // Clear previous guest fields
+    guestFields.innerHTML = '';
+
+    for (let i = 1; i <= guestCount; i++) {
+        const guestDiv = document.createElement('div');
+        guestDiv.className = 'guest-input';
+
+        guestDiv.innerHTML = `
+            <label for="guestName${i}">Guest ${i} Name:</label>
+            <input type="text" id="guestName${i}" required />
+            <label for="guestAge${i}">Age:</label>
+            <input type="number" id="guestAge${i}" min="1" required />
+        `;
+
+        guestFields.appendChild(guestDiv);
+    }
+
+    document.getElementById('guestForm').style.display = 'block';
+
+    // Enable add guests button if guest count is greater than 0
+    if (guestCount > 0) {
+        document.getElementById('addGuestsBtn').disabled = false;
+    }
+});
+
+// Hover effects for left and right splits (keep existing logic)
+var content = document.querySelector(".main");
+var left = document.querySelector(".left");
+var right = document.querySelector(".right");
+
+
+left.addEventListener('mouseenter', () => {
+    content.classList.add('hoverLeft');
+});
+
+left.addEventListener('mouseleave', () => {
+    content.classList.remove('hoverLeft');
+});
+
+right.addEventListener('mouseenter', () => {
+    content.classList.add('hoverRight');
+});
+
+right.addEventListener('mouseleave', () => {
+    content.classList.remove('hoverRight');
+});
+
+</script>
